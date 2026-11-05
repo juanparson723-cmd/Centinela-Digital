@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c46">
+
+    <title>Iniciar sesión | Centinela Digital</title>
+
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/login.js" defer></script>
+</head>
+
+<body class="pagina-login">
+
+    <main class="contenedor-login">
+
+        <section class="panel-presentacion">
+            <a href="/" class="marca">
+                <span class="marca-icono" aria-hidden="true">C</span>
+                <span>Centinela <strong>Digital</strong></span>
+            </a>
+
+            <div class="presentacion-contenido">
+                <span class="etiqueta">SEGURIDAD · PREVENCIÓN · COMUNIDAD</span>
+
+                <h1>Una comunidad más segura comienza con nosotros.</h1>
+
+                <p>
+                    Una plataforma para reportar situaciones de violencia,
+                    dar seguimiento a los casos y facilitar la canalización
+                    hacia las instituciones correspondientes.
+                </p>
+
+                <div class="beneficios">
+                    <div class="beneficio">
+                        <span class="beneficio-icono" aria-hidden="true">01</span>
+                        <div>
+                            <h2>Reportes responsables</h2>
+                            <p>Comunica situaciones que requieren atención.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <span class="beneficio-icono" aria-hidden="true">02</span>
+                        <div>
+                            <h2>Seguimiento privado</h2>
+                            <p>Consulta los avances de tu reporte con tus credenciales.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <span class="beneficio-icono" aria-hidden="true">03</span>
+                        <div>
+                            <h2>Atención coordinada</h2>
+                            <p>Facilita la canalización de los casos registrados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="texto-inferior">
+                La prevención y la participación hacen la diferencia.
+            </p>
+        </section>
+
+        <section class="panel-formulario">
+            <div class="formulario-contenido">
+
+                <div class="encabezado-movil">
+                    <a href="/" class="marca marca-oscura">
+                        <span class="marca-icono" aria-hidden="true">C</span>
+                        <span>Centinela <strong>Digital</strong></span>
+                    </a>
+                </div>
+
+                <span class="etiqueta etiqueta-oscura">PORTAL DE ACCESO</span>
+
+                <h2>Bienvenido de nuevo</h2>
+
+                <p class="subtitulo">
+                    Ingresa tus credenciales para continuar.
+                </p>
+
+                <form id="formulario-login">
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="nombre@correo.com"
+                            autocomplete="username"
+                            maxlength="150"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="contrasena">Contraseña</label>
+
+                        <div class="campo-contrasena">
+                            <input
+                                type="password"
+                                id="contrasena"
+                                name="contrasena"
+                                placeholder="Ingresa tu contraseña"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="mostrar-contrasena"
+                                class="boton-mostrar"
+                                aria-label="Mostrar contraseña"
+                                aria-pressed="false"
+                            >
+                                Mostrar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div
+                        id="mensaje-login"
+                        class="mensaje"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></div>
+
+                    <button
+                        type="submit"
+                        id="boton-login"
+                        class="boton-principal"
+                    >
+                        Iniciar sesión
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                </form>
+
+                <div class="separador">
+                    <span>¿Necesitas reportar una situación?</span>
+                </div>
+
+                <a href="/reporte" class="boton-secundario">
+                    Crear un reporte
+                </a>
+
+                <p>
+                    ¿No tienes cuenta?
+                    <a href="/">Crea una aquí</a>
+                </p>
+
+                <div class="aviso-privacidad">
+                    <span aria-hidden="true">◆</span>
+                    <p>
+                        Protege tus credenciales. El acceso a la plataforma
+                        está destinado a usuarios autorizados.
+                    </p>
+                </div>
+
+                <footer class="pie-login">
+                    Centinela Digital · Plataforma de prevención comunitaria
+                </footer>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

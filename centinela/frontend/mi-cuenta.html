@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi cuenta | Centinela Digital</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+
+    <style>
+        .cuenta-contenedor {
+            width: min(1000px, 92%);
+            margin: 40px auto;
+        }
+
+        .cuenta-panel, .reporte-card {
+            background: white;
+            padding: 24px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.07);
+        }
+
+        .cuenta-panel h2, .reportes-titulo {
+            margin-top: 0;
+        }
+
+        .datos-cuenta p {
+            margin: 10px 0;
+        }
+
+        .reporte-card h3 {
+            margin-top: 0;
+        }
+
+        .reporte-acciones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .reporte-acciones button, .boton-cuenta {
+            border: 0;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .boton-ver {
+            background: #e8edf5;
+            color: #24364b;
+        }
+
+        .boton-editar {
+            background: #dceafe;
+            color: #174b91;
+        }
+
+        .boton-eliminar {
+            background: #fee2e2;
+            color: #a32121;
+        }
+
+        .formulario-edicion {
+            display: none;
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formulario-edicion.activo {
+            display: block;
+        }
+
+        .formulario-edicion input,
+        .formulario-edicion textarea {
+            width: 100%;
+            padding: 11px;
+            margin: 8px 0 14px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            box-sizing: border-box;
+            font: inherit;
+        }
+
+        .formulario-edicion textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .mensaje-cuenta {
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .estado-reporte {
+            display: inline-block;
+            background: #edf2f7;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: .9rem;
+        }
+
+        .enlace-volver {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="cuenta-contenedor">
+
+        <a href="/reporte" class="enlace-volver">
+            ← Volver a crear un reporte
+        </a>
+
+        <section class="cuenta-panel">
+            <h1>Mi cuenta</h1>
+            <p>Consulta tu información personal y administra tus reportes.</p>
+
+            <div id="datos-cuenta" class="datos-cuenta">
+                Cargando información...
+            </div>
+
+            <p id="mensaje-cuenta" class="mensaje-cuenta"></p>
+
+            <button id="cerrar-sesion" class="boton-cuenta">
+                Cerrar sesión
+            </button>
+        </section>
+
+        <section>
+            <h2 class="reportes-titulo">Mis reportes</h2>
+            <div id="lista-reportes">
+                Cargando reportes...
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/js/mi-cuenta.js"></script>
+</body>
+</html>

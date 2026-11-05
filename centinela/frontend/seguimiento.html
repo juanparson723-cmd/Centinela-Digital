@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c46">
+
+    <title>Seguimiento de reporte | Centinela Digital</title>
+
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/seguimiento.js" defer></script>
+</head>
+
+<body>
+
+    <main class="contenedor-pagina">
+
+        <header class="encabezado-pagina">
+            <a href="/login" class="marca marca-oscura">
+                <span class="marca-icono" aria-hidden="true">C</span>
+                <span>Centinela <strong>Digital</strong></span>
+            </a>
+
+            <h1>Seguimiento de reporte</h1>
+
+            <p>
+                Consulta el estado de tu reporte utilizando el folio
+                y el código privado que recibiste al registrarlo.
+            </p>
+        </header>
+
+        <section class="tarjeta">
+
+            <form id="formulario-seguimiento">
+
+                <div class="grupo-campos">
+
+                    <div class="campo campo-completo">
+                        <label for="folio">Folio del reporte</label>
+
+                        <input
+                            type="text"
+                            id="folio"
+                            name="folio"
+                            maxlength="40"
+                            placeholder="Ej. CD-A1B2C3D4"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="codigo">Código privado de seguimiento</label>
+
+                        <input
+                            type="password"
+                            id="codigo"
+                            name="codigo"
+                            maxlength="200"
+                            placeholder="Introduce tu código privado"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <p class="campo-ayuda">
+                    Estos datos son privados. No los compartas con otras personas.
+                </p>
+
+                <div
+                    id="mensaje-seguimiento"
+                    class="mensaje"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+                <button
+                    type="submit"
+                    id="boton-seguimiento"
+                    class="boton-principal"
+                >
+                    Consultar reporte
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </form>
+
+            <section id="resultado-seguimiento" hidden>
+
+                <h2>Información del reporte</h2>
+
+                <div class="campo">
+                    <label>Folio</label>
+                    <p id="resultado-folio"></p>
+                </div>
+
+                <div class="campo">
+                    <label>Título</label>
+                    <p id="resultado-titulo"></p>
+                </div>
+
+                <div class="campo">
+                    <label>Descripción</label>
+                    <p id="resultado-descripcion"></p>
+                </div>
+
+                <div class="campo">
+                    <label>Estado actual</label>
+                    <p id="resultado-estado"></p>
+                </div>
+
+                <div class="campo">
+                    <label>Descripción del estado</label>
+                    <p id="resultado-descripcion-estado"></p>
+                </div>
+
+                <div class="campo">
+                    <label>Fecha de registro</label>
+                    <p id="resultado-fecha"></p>
+                </div>
+
+                <div class="campo">
+                    <label>Última actualización</label>
+                    <p id="resultado-actualizacion"></p>
+                </div>
+
+                <h2>Historial del reporte</h2>
+
+                <div id="lista-historial">
+                    <p>No hay movimientos disponibles.</p>
+                </div>
+
+            </section>
+
+            <p class="campo-ayuda">
+                <a href="/reporte">Volver a crear un reporte</a>
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

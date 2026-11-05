@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c46">
+
+    <title>Crear reporte | Centinela Digital</title>
+
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/reporte.js" defer></script>
+</head>
+
+<body>
+
+    <main class="contenedor-pagina">
+
+        <header class="encabezado-pagina">
+            <a href="/" class="marca marca-oscura">
+                <span class="marca-icono" aria-hidden="true">C</span>
+                <span>Centinela <strong>Digital</strong></span>
+            </a>
+
+            <h1>Reportar una situación</h1>
+
+            <p>
+                Proporciona información clara sobre la situación para
+                facilitar su registro y evaluación.
+            </p>
+
+            <a href="/mi-cuenta">Mi cuenta</a>
+
+            
+        </header>
+
+        <section class="tarjeta">
+
+            <form id="formulario-reporte">
+
+                <div class="grupo-campos">
+
+                    <div class="campo campo-completo">
+                        <label for="titulo">Título del reporte</label>
+
+                        <input
+                            type="text"
+                            id="titulo"
+                            name="titulo"
+                            maxlength="150"
+                            placeholder="Describe brevemente la situación"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="id_categoria">Tipo de violencia</label>
+
+                        <select id="id_categoria" name="id_categoria" required>
+                            <option value="">Cargando categorías...</option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="descripcion">Descripción de los hechos</label>
+
+                        <textarea
+                            id="descripcion"
+                            name="descripcion"
+                            minlength="10"
+                            maxlength="5000"
+                            placeholder="Describe qué sucedió, cuándo ocurrió y cualquier detalle relevante."
+                            required
+                        ></textarea>
+
+                        <p class="campo-ayuda">
+                            Evita incluir información personal innecesaria
+                            de otras personas.
+                        </p>
+                    </div>
+
+                    <div class="campo">
+                        <label for="estado">Estado</label>
+
+                        <input
+                            type="text"
+                            id="estado"
+                            name="estado"
+                            maxlength="100"
+                            placeholder="Ej. Estado de México"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="municipio">Municipio o alcaldía</label>
+
+                        <input
+                            type="text"
+                            id="municipio"
+                            name="municipio"
+                            maxlength="100"
+                            placeholder="Municipio o alcaldía"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="colonia">Colonia</label>
+
+                        <input
+                            type="text"
+                            id="colonia"
+                            name="colonia"
+                            maxlength="150"
+                            placeholder="Nombre de la colonia"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="referencia">Referencia del lugar</label>
+
+                        <input
+                            type="text"
+                            id="referencia"
+                            name="referencia"
+                            maxlength="255"
+                            placeholder="Calle o punto de referencia"
+                        >
+                    </div>
+
+                </div>
+
+                <label class="opcion-checkbox">
+                    <input
+                        type="checkbox"
+                        id="es_anonimo"
+                        name="es_anonimo"
+                        checked
+                    >
+
+                    <span>
+                        <strong>Enviar reporte anónimo.</strong>
+                        No asociar el reporte a mi cuenta de usuario.
+                    </span>
+                </label>
+
+                <p class="campo-ayuda">
+                    Al enviar el reporte se generarán un folio y un código
+                    privado. Guárdalos para consultar el seguimiento.
+                </p>
+
+                <div
+                    id="mensaje-reporte"
+                    class="mensaje"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+                <button
+                    type="submit"
+                    id="boton-reporte"
+                    class="boton-principal"
+                >
+                    Enviar reporte
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </form>
+
+            <section id="resultado-reporte" hidden aria-live="polite">
+                <h2>Reporte registrado</h2>
+
+                <p>Guarda estos datos en un lugar seguro.</p>
+
+                <div class="campo">
+                    <label for="folio-generado">Folio</label>
+                    <input id="folio-generado" readonly>
+                </div>
+
+                <div class="campo">
+                    <label for="codigo-generado">Código privado de seguimiento</label>
+                    <input id="codigo-generado" readonly>
+                </div>
+
+                <button
+                    type="button"
+                    id="copiar-credenciales"
+                    class="boton-secundario"
+                >
+                    Copiar folio y código
+                </button>
+            </section>
+
+            <p class="campo-ayuda">
+                ¿Ya tienes un reporte?
+                <a href="/seguimiento">Consultar su seguimiento</a>
+            </p>
+ 
+            <p class="campo-ayuda">
+                <a href="/">Volver al inicio de sesión</a>
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
