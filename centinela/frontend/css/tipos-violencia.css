@@ -1,0 +1,179 @@
+/* SECCIÓN DE TIPOS DE VIOLENCIA */
+
+.seccion-tipos-violencia {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.encabezado-seccion {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+.encabezado-seccion h2 {
+    color: #102c46;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 15px 0;
+}
+
+.encabezado-seccion p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* CARRUSEL */
+
+.carrusel-tipos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tipos-ventana {
+    width: 100%;
+    overflow: hidden;
+}
+
+.tipos-pista {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 10px 3px 20px;
+}
+
+.tipos-pista::-webkit-scrollbar {
+    display: none;
+}
+
+/* TARJETAS */
+
+.tipo-tarjeta {
+    flex: 0 0 calc(33.333% - 14px);
+    min-width: 260px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px;
+    min-height: 280px;
+
+    text-decoration: none;
+    color: #102c46;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f1f6fb
+    );
+
+    border: 1px solid #dce7f1;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(16, 44, 70, 0.06);
+
+    scroll-snap-align: start;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.tipo-tarjeta:hover {
+    transform: translateY(-5px);
+
+    border-color: #9bbbd6;
+
+    box-shadow: 0 14px 30px rgba(
+        16, 44, 70, 0.12
+    );
+}
+
+.tipo-numero {
+    color: #7c9bb8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tipo-tarjeta h3 {
+    margin: 20px 0 12px;
+    font-size: 1.25rem;
+}
+
+.tipo-tarjeta p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.tipo-enlace {
+    margin-top: auto;
+    padding-top: 20px;
+
+    color: #2d6a9f;
+    font-weight: 600;
+}
+
+/* BOTONES */
+
+.flecha-tipos {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #dce7f1;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #102c46;
+
+    font-size: 1.7rem;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.flecha-tipos:hover {
+    background: #102c46;
+    color: #ffffff;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .tipo-tarjeta {
+        flex-basis: 45%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .seccion-tipos-violencia {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .tipo-tarjeta {
+        flex-basis: 85%;
+    }
+
+    .carrusel-tipos {
+        gap: 8px;
+    }
+
+    .flecha-tipos {
+        width: 34px;
+        height: 34px;
+        font-size: 1.3rem;
+    }
+
+}

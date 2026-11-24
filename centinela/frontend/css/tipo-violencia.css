@@ -1,0 +1,139 @@
+.pagina-violencia {
+    min-height: 70vh;
+    padding: 50px 0 80px;
+    background: #f7fafd;
+}
+
+.volver-inicio {
+    display: inline-block;
+    margin-bottom: 35px;
+
+    color: #2d6a9f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.introduccion-violencia {
+    padding: 45px;
+    margin-bottom: 60px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eaf2f9
+    );
+
+    border: 1px solid #dce7f1;
+    border-radius: 24px;
+}
+
+.introduccion-violencia h1 {
+    color: #102c46;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 18px 0;
+}
+
+.introduccion-violencia p {
+    max-width: 700px;
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.seccion-noticias {
+    padding-top: 10px;
+}
+
+.encabezado-noticias {
+    margin-bottom: 30px;
+}
+
+.encabezado-noticias h2 {
+    color: #102c46;
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.encabezado-noticias p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.lista-noticias {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+    );
+
+    gap: 24px;
+}
+
+.tarjeta-noticia {
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #dce7f1;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(
+        16, 44, 70, 0.06
+    );
+}
+
+.imagen-noticia {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #e8eff5;
+}
+
+.contenido-noticia {
+    padding: 22px;
+}
+
+.fecha-noticia {
+    color: #7c9bb8;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.contenido-noticia h3 {
+    color: #102c46;
+    margin: 12px 0;
+    font-size: 1.2rem;
+}
+
+.contenido-noticia p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.fuente-noticia {
+    display: block;
+    margin-top: 15px;
+    color: #2d6a9f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.estado-noticias {
+    padding: 25px;
+    color: #64748b;
+
+    background: #ffffff;
+    border: 1px solid #dce7f1;
+    border-radius: 16px;
+}
+
+@media (max-width: 600px) {
+
+    .introduccion-violencia {
+        padding: 25px;
+    }
+
+    .pagina-violencia {
+        padding-top: 30px;
+    }
+
+}

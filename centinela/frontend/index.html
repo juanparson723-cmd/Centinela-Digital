@@ -1,176 +1,585 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#102c46">
+    <meta name="description"
+        content="Centinela Digital: plataforma de prevención comunitaria, registro y seguimiento de reportes.">
 
-    <title>Iniciar sesión | Centinela Digital</title>
+    <title>Centinela Digital | Inicio</title>
 
-    <link rel="stylesheet" href="/css/estilos.css">
-    <script src="/js/login.js" defer></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/tipos-violencia.css">
+    <script src="/js/index.js" defer></script>
 </head>
 
-<body class="pagina-login">
-
-    <main class="contenedor-login">
-
-        <section class="panel-presentacion">
-            <a href="/" class="marca">
-                <span class="marca-icono" aria-hidden="true">C</span>
+<body>
+    <header class="encabezado">
+        <nav class="navegacion contenedor">
+            <a href="/inicio/" class="marca">
+                <span class="marca-icono">C</span>
                 <span>Centinela <strong>Digital</strong></span>
             </a>
 
-            <div class="presentacion-contenido">
-                <span class="etiqueta">SEGURIDAD · PREVENCIÓN · COMUNIDAD</span>
+            <button
+                class="boton-menu"
+                id="boton-menu"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="menu-navegacion"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-                <h1>Una comunidad más segura comienza con nosotros.</h1>
+            <div class="menu-navegacion" id="menu-navegacion">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#estadisticas">Estadísticas</a>
+                <a href="#participacion">Participación</a>
+                <a href="/login" class="enlace-acceso">Iniciar sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PORTADA PRINCIPAL -->
+        <section class="hero" id="inicio">
+            <div class="hero-imagen"></div>
+            <div class="hero-capa"></div>
+
+            <div class="hero-contenido contenedor elemento-aparece">
+                <span class="etiqueta">
+                    SEGURIDAD · PREVENCIÓN · COMUNIDAD
+                </span>
+
+                <h1>
+                    Una comunidad más segura
+                    <span>comienza con nosotros.</span>
+                </h1>
 
                 <p>
-                    Una plataforma para reportar situaciones de violencia,
-                    dar seguimiento a los casos y facilitar la canalización
-                    hacia las instituciones correspondientes.
+                    Una plataforma orientada al registro y seguimiento
+                    de situaciones de violencia, promoviendo la
+                    participación y la prevención comunitaria.
                 </p>
 
-                <div class="beneficios">
-                    <div class="beneficio">
-                        <span class="beneficio-icono" aria-hidden="true">01</span>
-                        <div>
-                            <h2>Reportes responsables</h2>
-                            <p>Comunica situaciones que requieren atención.</p>
-                        </div>
-                    </div>
+                <div class="hero-acciones">
+                    <a href="#nosotros" class="boton-principal">
+                        Conoce nuestra plataforma
+                        <span aria-hidden="true">→</span>
+                    </a>
 
-                    <div class="beneficio">
-                        <span class="beneficio-icono" aria-hidden="true">02</span>
-                        <div>
-                            <h2>Seguimiento privado</h2>
-                            <p>Consulta los avances de tu reporte con tus credenciales.</p>
-                        </div>
-                    </div>
+                    <a href="#impacto-estres">Impacto en el estrés</a>
 
-                    <div class="beneficio">
-                        <span class="beneficio-icono" aria-hidden="true">03</span>
-                        <div>
-                            <h2>Atención coordinada</h2>
-                            <p>Facilita la canalización de los casos registrados.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="texto-inferior">
-                La prevención y la participación hacen la diferencia.
-            </p>
-        </section>
-
-        <section class="panel-formulario">
-            <div class="formulario-contenido">
-
-                <div class="encabezado-movil">
-                    <a href="/" class="marca marca-oscura">
-                        <span class="marca-icono" aria-hidden="true">C</span>
-                        <span>Centinela <strong>Digital</strong></span>
+                    <a href="#estadisticas" class="boton-secundario">
+                        Explorar estadísticas
                     </a>
                 </div>
+            </div>
+        </section>
 
-                <span class="etiqueta etiqueta-oscura">PORTAL DE ACCESO</span>
+        <!-- NOSOTROS -->
+        <section class="seccion seccion-presentacion" id="nosotros">
+            <div class="contenedor">
+                <div class="encabezado-seccion elemento-aparece">
+                    <span class="etiqueta-azul">
+                        CONOCE CENTINELA DIGITAL
+                    </span>
 
-                <h2>Bienvenido de nuevo</h2>
+                    <h2>¿Qué es Centinela Digital?</h2>
 
-                <p class="subtitulo">
-                    Ingresa tus credenciales para continuar.
-                </p>
-
-                <form id="formulario-login">
-
-                    <div class="campo">
-                        <label for="correo">Correo electrónico</label>
-
-                        <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            placeholder="nombre@correo.com"
-                            autocomplete="username"
-                            maxlength="150"
-                            required
-                        >
-                    </div>
-
-                    <div class="campo">
-                        <label for="contrasena">Contraseña</label>
-
-                        <div class="campo-contrasena">
-                            <input
-                                type="password"
-                                id="contrasena"
-                                name="contrasena"
-                                placeholder="Ingresa tu contraseña"
-                                autocomplete="current-password"
-                                required
-                            >
-
-                            <button
-                                type="button"
-                                id="mostrar-contrasena"
-                                class="boton-mostrar"
-                                aria-label="Mostrar contraseña"
-                                aria-pressed="false"
-                            >
-                                Mostrar
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        id="mensaje-login"
-                        class="mensaje"
-                        role="status"
-                        aria-live="polite"
-                        hidden
-                    ></div>
-
-                    <button
-                        type="submit"
-                        id="boton-login"
-                        class="boton-principal"
-                    >
-                        Iniciar sesión
-                        <span aria-hidden="true">→</span>
-                    </button>
-
-                </form>
-
-                <div class="separador">
-                    <span>¿Necesitas reportar una situación?</span>
-                </div>
-
-                <a href="/reporte" class="boton-secundario">
-                    Crear un reporte
-                </a>
-
-                <p>
-                    ¿No tienes cuenta?
-                    <a href="/">Crea una aquí</a>
-                </p>
-
-                <div class="aviso-privacidad">
-                    <span aria-hidden="true">◆</span>
                     <p>
-                        Protege tus credenciales. El acceso a la plataforma
-                        está destinado a usuarios autorizados.
+                        Centinela Digital es una plataforma orientada
+                        al registro y seguimiento de situaciones de
+                        violencia. Su propósito es facilitar la
+                        organización de la información y promover
+                        la prevención mediante la participación
+                        responsable de la comunidad.
                     </p>
                 </div>
 
-                <footer class="pie-login">
-                    Centinela Digital · Plataforma de prevención comunitaria
-                </footer>
+                <div class="tarjetas-informativas elemento-aparece">
+                    <article class="tarjeta">
+                        <div class="icono-tarjeta">01</div>
+                        <h3>Nuestro propósito</h3>
 
+                        <p>
+                            Contribuir a la prevención de la violencia
+                            mediante herramientas digitales que
+                            permitan registrar y consultar información
+                            relacionada con las situaciones reportadas.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono-tarjeta">02</div>
+                        <h3>¿Qué buscamos?</h3>
+
+                        <p>
+                            Facilitar el acceso a información,
+                            promover la participación comunitaria
+                            y apoyar la organización de los reportes
+                            para su seguimiento.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono-tarjeta">03</div>
+                        <h3>Prevención y comunidad</h3>
+
+                        <p>
+                            Fomentar una cultura de prevención,
+                            responsabilidad y colaboración para
+                            contribuir a la construcción de
+                            comunidades más seguras.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
+        <!-- PRESENTACIÓN -->
+        <div class="carrusel-contenedor elemento-aparece">
+            <button
+                class="flecha-carrusel"
+                id="anterior-tarjeta"
+                aria-label="Tarjeta anterior"
+            >
+                ‹
+            </button>
+
+            <div class="carrusel-ventana">
+                <div class="carrusel-pista" id="pista-tarjetas">
+                    <article class="tarjeta">
+                        <div class="icono-tarjeta">01</div>
+                        <h3>Prevención</h3>
+                        <p>
+                            Promover la identificación y comunicación
+                            de situaciones que requieren atención.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono-tarjeta">02</div>
+                        <h3>Registro responsable</h3>
+                        <p>
+                            Organizar la información de los reportes
+                            para facilitar su consulta y administración.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono-tarjeta">03</div>
+                        <h3>Seguimiento</h3>
+                        <p>
+                            Consultar los avances y cambios de estado
+                            de los reportes registrados.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <button
+                class="flecha-carrusel"
+                id="siguiente-tarjeta"
+                aria-label="Tarjeta siguiente"
+            >
+                ›
+            </button>
+        </div>
+
+        <!-- TIPOS DE VIOLENCIA -->
+        <section class="seccion-tipos-violencia contenedor" id="tipos-violencia">
+            <div class="encabezado-seccion elemento-aparece">
+                <span class="etiqueta">
+                    INFORMACIÓN Y PREVENCIÓN
+                </span>
+
+                <h2>Conoce los tipos de violencia</h2>
+
+                <p>
+                    Identifica diferentes situaciones de violencia,
+                    conoce información relacionada y consulta
+                    las novedades de cada categoría.
+                </p>
+            </div>
+
+            <div class="carrusel-tipos">
+                <button
+                    class="flecha-tipos"
+                    id="anterior-tipo"
+                    aria-label="Tipos anteriores"
+                >
+                    ‹
+                </button>
+
+                <div class="tipos-ventana">
+                    <div class="tipos-pista" id="pista-tipos">
+                        <a href="/violencia/familiar" class="tipo-tarjeta">
+                            <span class="tipo-numero">01</span>
+                            <h3>Violencia familiar</h3>
+                            <p>
+                                Información y novedades relacionadas
+                                con la violencia dentro del entorno familiar.
+                            </p>
+                            <span class="tipo-enlace">
+                                Explorar información →
+                            </span>
+                        </a>
+
+                        <a href="/violencia/femenina" class="tipo-tarjeta">
+                            <span class="tipo-numero">02</span>
+                            <h3>Violencia femenina</h3>
+                            <p>
+                                Información y novedades sobre situaciones
+                                de violencia contra las mujeres.
+                            </p>
+                            <span class="tipo-enlace">
+                                Explorar información →
+                            </span>
+                        </a>
+
+                        <a href="/violencia/abuso-infantil" class="tipo-tarjeta">
+                            <span class="tipo-numero">03</span>
+                            <h3>Abuso infantil</h3>
+                            <p>
+                                Información relacionada con la protección
+                                y prevención de situaciones de abuso infantil.
+                            </p>
+                            <span class="tipo-enlace">
+                                Explorar información →
+                            </span>
+                        </a>
+
+                        <a href="/violencia/acoso-sexual" class="tipo-tarjeta">
+                            <span class="tipo-numero">04</span>
+                            <h3>Acoso sexual</h3>
+                            <p>
+                                Noticias e información sobre prevención
+                                y atención del acoso sexual.
+                            </p>
+                            <span class="tipo-enlace">
+                                Explorar información →
+                            </span>
+                        </a>
+
+                        <a href="/violencia/acoso-laboral" class="tipo-tarjeta">
+                            <span class="tipo-numero">05</span>
+                            <h3>Acoso laboral</h3>
+                            <p>
+                                Información relacionada con situaciones
+                                de hostigamiento en el entorno laboral.
+                            </p>
+                            <span class="tipo-enlace">
+                                Explorar información →
+                            </span>
+                        </a>
+
+                        <a href="/violencia/acoso-escolar" class="tipo-tarjeta">
+                            <span class="tipo-numero">06</span>
+                            <h3>Acoso escolar</h3>
+                            <p>
+                                Información y novedades sobre prevención
+                                del acoso en el entorno educativo.
+                            </p>
+                            <span class="tipo-enlace">
+                                Explorar información →
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <button
+                    class="flecha-tipos"
+                    id="siguiente-tipo"
+                    aria-label="Tipos siguientes"
+                >
+                    ›
+                </button>
+            </div>
+        </section>
+
+        
+        <!-- ESTADÍSTICAS -->
+
+        <section class="seccion seccion-estadisticas" id="estadisticas">
+
+            <div class="contenedor">
+
+                <div class="encabezado-seccion elemento-aparece">
+
+                    <span class="etiqueta-azul">
+                        INFORMACIÓN Y DATOS
+                    </span>
+
+                    <h2>Estadísticas de violencia</h2>
+
+                    <p>
+                        Conocer la información relacionada con
+                        la violencia permite identificar patrones
+                        y comprender mejor las situaciones que
+                        afectan a nuestra comunidad.
+                    </p>
+
+                    <p>
+                        En esta sección se presentan gráficas
+                        elaboradas a partir de la investigación
+                        realizada para Centinela Digital.
+                    </p>
+
+                </div>
+
+
+                <div class="carrusel-graficas elemento-aparece">
+
+                    <button class="flecha-carrusel"
+                        id="anterior-grafica"
+                        aria-label="Gráfica anterior">
+                        ‹
+                    </button>
+
+                    <div class="carrusel-ventana">
+
+                        <div class="carrusel-pista"
+                            id="pista-graficas">
+
+
+                            <!-- GRÁFICA 1 -->
+
+                            <article class="tarjeta-grafica">
+
+                                <div class="grafica-texto">
+
+                                    <span class="numero-seccion">
+                                        01 / REPORTES
+                                    </span>
+
+                                    <h3>Registro de reportes</h3>
+
+                                    <p>
+                                        Esta gráfica presenta la
+                                        información sobre los reportes
+                                        registrados durante los periodos
+                                        analizados en la investigación.
+                                    </p>
+
+                                </div>
+
+                                <img
+                                    src="assets/graficas/reportes.png"
+                                    alt="Gráfica de registro de reportes"
+                                >
+
+                            </article>
+
+
+                            <!-- GRÁFICA 2 -->
+
+                            <article class="tarjeta-grafica">
+
+                                <div class="grafica-texto">
+
+                                    <span class="numero-seccion">
+                                        02 / CATEGORÍAS
+                                    </span>
+
+                                    <h3>Distribución por categorías</h3>
+
+                                    <p>
+                                        Permite observar cómo se
+                                        distribuyen los registros
+                                        entre las diferentes categorías
+                                        de violencia consideradas.
+                                    </p>
+
+                                </div>
+
+                                <img
+                                    src="assets/graficas/categorias.png"
+                                    alt="Gráfica de distribución por categorías"
+                                >
+
+                            </article>
+
+
+                            <!-- GRÁFICA 3 -->
+
+                            <article class="tarjeta-grafica">
+
+                                <div class="grafica-texto">
+
+                                    <span class="numero-seccion">
+                                        03 / EVOLUCIÓN
+                                    </span>
+
+                                    <h3>Comportamiento de los registros</h3>
+
+                                    <p>
+                                        Muestra los cambios observados
+                                        en los registros a través del
+                                        tiempo, de acuerdo con el periodo
+                                        estudiado.
+                                    </p>
+
+                                </div>
+
+                                <img
+                                    src="assets/graficas/evolucion.png"
+                                    alt="Gráfica de evolución de los registros"
+                                >
+
+                            </article>
+
+
+                        </div>
+
+                    </div>
+
+                    <button class="flecha-carrusel"
+                        id="siguiente-grafica"
+                        aria-label="Gráfica siguiente">
+                        ›
+                    </button>
+
+                </div>
+
+
+                <!-- INDICADORES DEL CARRUSEL -->
+
+                <div class="indicadores-carrusel"
+                    id="indicadores-graficas">
+
+                    <button class="indicador activo"
+                        aria-label="Gráfica 1">
+                    </button>
+
+                    <button class="indicador"
+                        aria-label="Gráfica 2">
+                    </button>
+
+                    <button class="indicador"
+                        aria-label="Gráfica 3">
+                    </button>
+
+                </div>
+
+
+                <p class="nota-estadisticas">
+                    Los datos deben interpretarse considerando
+                    el periodo y la fuente indicados en cada gráfica.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPACTO DE LA VIOLENCIA EN EL ESTRÉS -->
+        <section class="seccion seccion-impacto-estres" id="impacto-estres">
+            <div class="contenedor">
+
+                <div class="encabezado-seccion elemento-aparece">
+                    <span class="etiqueta-azul">
+                        BIENESTAR Y PREVENCIÓN
+                    </span>
+
+                     <h2>Impacto de la violencia en el estrés</h2>
+
+                    <p>
+                        La violencia puede afectar el bienestar emocional
+                        y físico de las personas. Conocer sus posibles
+                        consecuencias permite reconocer la importancia
+                        de la prevención, el apoyo y la atención oportuna.
+                    </p>
+                </div>
+
+                <div class="impacto-presentacion elemento-aparece">
+
+                    <div class="impacto-presentacion-texto">
+                        <span class="numero-seccion">
+                            INFORMACIÓN · REFLEXIÓN · PREVENCIÓN
+                        </span>
+
+                        <h3>Comprender también es prevenir</h3>
+
+                        <p>
+                            Consulta la siguiente presentación para conocer
+                            más sobre la relación entre la violencia y el
+                            estrés, así como la importancia de cuidar
+                            nuestro bienestar.
+                        </p>
+                    </div>
+                  
+                    <div class="impacto-canva">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%;
+                            overflow: hidden; border-radius: 12px;">
+
+                            <iframe
+                                loading="lazy"
+                                style="position: absolute; width: 100%; height: 100%;
+                                    top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                                src="https://www.canva.com/design/DAHbXbPDL68/U2swDy2ak1-Eymid1EQtWw/view?embed"
+                                allowfullscreen="allowfullscreen"
+                                allow="fullscreen">
+                            </iframe>
+
+                        </div>
+                    </div>
+
+                    <p class="impacto-pie">
+                        Presentación informativa de Centinela Digital.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PARTICIPACIÓN -->
+        <section class="seccion-participacion" id="participacion">
+            <div class="contenedor participacion-contenido elemento-aparece">
+                <span class="etiqueta">
+                    PARTICIPACIÓN Y PREVENCIÓN
+                </span>
+
+                <h2>
+                    Construir una comunidad más segura
+                    es una responsabilidad compartida.
+                </h2>
+
+                <p>
+                    Conoce las herramientas de Centinela Digital
+                    y participa en la prevención comunitaria.
+                </p>
+
+                <a href="/login" class="boton-claro">
+                    Acceder a la plataforma
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
     </main>
 
+    <footer class="pie-pagina">
+        <div class="contenedor pie-contenido">
+            <a href="#inicio" class="marca marca-pie">
+                <span class="marca-icono">C</span>
+                <span>Centinela <strong>Digital</strong></span>
+            </a>
+
+            <p>
+                Plataforma de prevención y seguimiento comunitario.
+            </p>
+
+            <span class="copyright">
+                Centinela Digital · Proyecto académico
+            </span>
+        </div>
+    </footer>
 </body>
+
 </html>

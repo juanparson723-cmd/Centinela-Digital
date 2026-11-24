@@ -5,6 +5,7 @@ from flask import (
     Flask,
     jsonify,
     send_from_directory,
+    redirect,
 )
 from dotenv import load_dotenv
 
@@ -17,6 +18,14 @@ from routes.cuenta import cuenta_bp
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(BASE_DIR)
 FRONTEND_DIR = os.path.join(PROJECT_DIR, "frontend")
+TIPOS_VIOLENCIA = {
+    "familiar": "Violencia familiar",
+    "femenina": "Violencia femenina",
+    "abuso-infantil": "Abuso infantil",
+    "acoso-sexual": "Acoso sexual",
+    "acoso-laboral": "Acoso laboral",
+    "acoso-escolar": "Acoso escolar",
+}
 
 load_dotenv(os.path.join(PROJECT_DIR, ".env"))
 
@@ -44,16 +53,35 @@ app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(reportes_bp, url_prefix="/api")
 app.register_blueprint(cuenta_bp, url_prefix="/api")
 
-# Página principal: creación de cuenta.
+# Página principal: portada institucional.
 @app.get("/")
+def pagina_inicio():
+    return redirect("/inicio/")
+
+# Página de inicio de Centinela Digital.
+@app.get("/inicio/")
+def pagina_inicio_web():
+    return send_from_directory(
+        FRONTEND_DIR,
+        "index.html"
+    )
+
+# Archivos de la página de inicio:
+# CSS, JavaScript e imágenes.
+@app.get("/inicio/<path:filename>")
+def archivos_inicio(filename):
+    return send_from_directory(
+        FRONTEND_DIR,
+        filename
+    )
+
+# Página de creación de cuenta.
+@app.get("/registro")
 def pagina_registro():
-    return send_from_directory(FRONTEND_DIR, "registro.html")
-
-
-# Página de inicio de sesión.
-@app.get("/login")
-def index():
-    return send_from_directory(FRONTEND_DIR, "index.html")
+    return send_from_directory(
+        FRONTEND_DIR,
+        "registro.html"
+    )
 
 
 # Formulario de reportes.
@@ -120,6 +148,19 @@ def not_found(_error):
         "error": "Recurso no encontrado"
     }), 404
 
+# Páginas de los diferentes tipos de violencia.
+@app.get("/violencia/<tipo>")
+def pagina_tipo_violencia(tipo):
+
+    if tipo not in TIPOS_VIOLENCIA:
+        return jsonify({
+            "error": "Tipo de violencia no encontrado"
+        }), 404
+
+    return send_from_directory(
+        FRONTEND_DIR,
+        "tipo-violencia.html"
+    )
 
 @app.errorhandler(413)
 def payload_too_large(_error):
