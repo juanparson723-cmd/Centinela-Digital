@@ -83,6 +83,12 @@ def pagina_registro():
         "registro.html"
     )
 
+@app.get("/login")
+def pagina_login():
+    return send_from_directory(
+        FRONTEND_DIR,
+        "login.html"
+    )
 
 # Formulario de reportes.
 @app.get("/reporte")
